@@ -42,10 +42,10 @@ const grandFather={
         age:80
        }
     const father=Object.create(grandFather)
-    console.log(father.name)//it will gives result as sudhir as name property is not to fater hence it will look for it in parent chain
+    console.log(father.name)//it will gives result as ramrao as name property is not to fater hence it will look for it in parent chain
     const son = Object.create(grandFather)
     son.name="shamrao"
-    console.log(son.name)//as we declase value of son.name hence it shows resullt as yogesh</pre
+    console.log(son.name)//as we declase value of son.name hence it shows resullt as shamrao</pre
     >
     Output-ramrao<br />
     shamrao
@@ -86,11 +86,9 @@ const grandFather={
          console.log("The age is ",data.age)
          console.log("The college is ",data.college)</pre
     >
-    <b
       >output-The name is abc<br />
       output -The passyrear is 2023<br />
       output-The age is 23<br />
       output-The college is Prepbytes
-    </b>
   </body>
 </html>
