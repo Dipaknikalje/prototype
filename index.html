@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROTOTYPE</title>
+  </head>
+  <body>
+    <h1 class="heading">PROTOTYPE</h1>
+    <h3>
+      Q.1 Create 2 objects - parent and child. Attach methods to parent and use
+      those methods in child object using parents prototype
+    </h3>
+    <pre>
+    const parent ={
+    details(){
+        console.log(`My name is ${this.name} and I am from ${this.location}`)
+    }
+    }
+    const firstchild = Object.create(parent);
+    firstchild.name ="dipak";
+    firstchild.location="pune";
+    
+    firstchild.details();
+    
+    const secondChild= Object.create(parent)
+    secondChild.name="ram"
+    secondChild.location="Pune"
+    
+    secondChild.details()</pre
+    >
+    <b
+      >My name is dipak and I am from pune<br />
+      My name is ram and I am from Pune</b
+    >
+
+    <h3>Q.2 Write code to explain prototype chaining</h3>
+    <pre>
+const grandFather={
+        name:"ramrao",
+        age:80
+       }
+    const father=Object.create(grandFather)
+    console.log(father.name)//it will gives result as sudhir as name property is not to fater hence it will look for it in parent chain
+    const son = Object.create(grandFather)
+    son.name="shamrao"
+    console.log(son.name)//as we declase value of son.name hence it shows resullt as yogesh</pre
+    >
+    Output-ramrao<br />
+    shamrao
+    <h3>
+      Q.3 Add a method to calculate sum of all elements in Array in array's
+      protype, use that method to calculate sum for multiple arrays
+    </h3>
+    <pre>
+        let arr = new Array(1,2,3,4,5)
+            arr.__proto__.sum=function(givenArray){
+                let count = 0;
+                for(let i =0;i<arr.length;i++){
+                    count +=arr[i];
+                }
+                return count;
+            }
+            let result =arr.sum(arr)
+            console.log(result);
+        </pre
+    >
+    <b>Output - The sum of given array's element is 15 </b>
+
+    <h3>
+      Q.4 Write a JavaScript function to retrieve all the names of object's own
+      and inherited properties.
+    </h3>
+    <pre>
+        function DisplayData(name,age,college){
+            this.name = name,
+            this.age = age,
+            this.college=college
+        }
+        DisplayData.prototype.passyrear ="2023"
+         const data = new DisplayData("abc", 23 , "Prepbytes")
+         console.log(data)
+         console.log("The name is ",data.name);//output-abc
+         console.log("The passyrear is ",data.passyrear)//output -2023
+         console.log("The age is ",data.age)
+         console.log("The college is ",data.college)</pre
+    >
+    <b
+      >output-The name is abc<br />
+      output -The passyrear is 2023<br />
+      output-The age is 23<br />
+      output-The college is Prepbytes
+    </b>
+  </body>
+</html>
